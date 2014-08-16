@@ -58,14 +58,14 @@ The median is: `r medianDailySteps`
 
 To obtain the average daily activity pattern we will make use of the plyr library, in particular the ddply function. This function will split the data frame by the intervals and summarize the steps by their mean.
 
-For more information about this function write the following line:
-```{r}
-?ddply
-```
-
 ```{r}
 library(plyr)
 intervalSteps <-  ddply(dataIgnoreNA,~interval, summarise, mean=mean(steps))
+```
+
+For more information about this function write the following line:
+```{r}
+?ddply
 ```
 
 The plot of the steps mean vs the intervals
